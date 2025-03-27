@@ -16,7 +16,7 @@ void init_stack(StackType* s)
 }
 
 //공백 상태 검출 함수
-int is_empty(StacjType* s)
+int is_empty(StackType* s)
 {
 	return(s->top == (MAX_STACK_SIZE - 1));
 }
@@ -33,4 +33,27 @@ void push(StackType* s, element item)
 		return;
 	}
 	else s->data[++(s->top)] = item;
+}
+//삭제함수
+element pop(StackType* s)
+{
+	if (is_empty(s)) {
+		fprintf(stderr, "스택 공백 에러\n");
+		exit(1);
+	}
+	else return s->data[(s->top)--];
+}
+//===== 스택 코드의 끝 =====
+
+int main(void)
+{
+	StackType s;
+
+	init_stack(&s);
+	push(&s, 1);
+	push(&s, 2);
+	push(&s, 3);
+	printf("%d\n", pop(&s));
+	printf("%d\n", pop(&s));
+	printf("%d\n", pop(&s));
 }

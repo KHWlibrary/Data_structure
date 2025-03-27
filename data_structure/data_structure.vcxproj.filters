@@ -36,10 +36,7 @@
     <ClCompile Include="mall_free.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="program4.1.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="소스.cpp">
+    <ClCompile Include="program4-3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
