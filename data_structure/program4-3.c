@@ -18,7 +18,7 @@ void init_stack(StackType* s)
 //공백 상태 검출 함수
 int is_empty(StackType* s)
 {
-	return(s->top == (MAX_STACK_SIZE - 1));
+	return(s->top == - 1);
 }
 //포화 상태 검출 함수
 int is_full(StackType* s)
