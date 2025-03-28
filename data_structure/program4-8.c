@@ -53,41 +53,58 @@ element peek(StackType* s)
 	else return s->data[s->top];
 }
 //===== 스택 코드의 끝 =====
-
-//후위 표기 수식 계산 함수
-int eval(char exp[])
+//연산자의 우선순위를 반환한다.
+int prec(char op) {
+	switch (op) {
+	case'(':case')':return 0;
+	case'+':case'-':return 1;
+	case'*':case'/':return 2;
+	}
+	return -1;
+}
+//중위 표기 수식 ->후위 표기 수식
+void infix_to_postfix(char exp[])
 {
-	int op1, op2, value, i = 0;
+	int i = 0;
+	char ch, top_op;
 	int len = strlen(exp);
-	char ch;
 	StackType s;
 
 	init_stack(&s);
 	for (i = 0; i < len; i++) {
 		ch = exp[i];
-		if (ch != '+' && ch != '-' && ch != '*' && ch != '/') {
-			value = ch - '0';		//입력이 피연산자이면
-			push(&s, value);
-		}
-		else {						//연산자이면 피연산자를 스택에서 제거
-			op2 = pop(&s);
-			op1 = pop(&s);
-			switch (ch) {			//연산음 수행하고 스택에 저장
-			case '+':push(&s, op1 + op2); break;
-			case '-':push(&s, op1 - op2); break;
-			case '*':push(&s, op1 * op2); break;
-			case '/':push(&s, op1 / op2); break;
+		switch (ch) {
+		case '+':case'-':case'*':case'/':		//연산자
+			//스택에 있는 연산자의 우선순위가 더 크거나 같으면 출력
+			while (!is_empty(&s) && (prec(ch) <= prec(peek(&s))))
+				printf("%c", pop(&s));
+			push(&s, ch);
+			break;
+		case'(':	//왼족 괄호
+			push(&s, ch);
+			break;
+		case')':	//오른쪽 괄호
+			top_op = pop(&s);
+			//왼쪽괄호 만날때까지 출력
+			while (top_op != '(') {
+				printf("%c", top_op);
+				top_op = pop(&s);
 			}
+			break;
+		default:	//피연산자
+			printf("%c", ch);
+			break;
 		}
 	}
-	return pop(&s);
+	while (!is_empty(&s))	//스택에 저장된 연산자들 출력
+		printf("%c", pop(&s));
 }
-
 int main(void)
 {
-	int result;
-	printf("후위표기식은 82/3-32*+\n");
-	result = eval("82/3-32*+");
-	printf("결과값은 %d\n", result);
+	char* s = "(2+3)*4+9";
+	printf("중위표시수식%s\n",s);
+	printf("후위표시수식");
+	infix_to_postfix(s);
+	printf("\n");
 	return 0;
 }

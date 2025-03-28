@@ -44,6 +44,15 @@ element pop(StackType* s)
 	}
 	else return s->data[(s->top)--];
 }
+//피크함수
+element peek(StackType* s)
+{
+	if (is_empty(s)) {
+		fprintf(stderr, "스택공백에러\n");
+		exit(1);
+	}
+	else return s->data[s->top];
+}
 //===== 스택 코드의 끝 =====
 int check_matching(const char* in)
 {
