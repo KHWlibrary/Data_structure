@@ -55,10 +55,10 @@ element peek(StackType* s)
 //===== 스택 코드의 끝 =====
 
 void process_parentheses(char* expr) {
-	StackType stack;
-	init_stack(&stack);
+	StackType stack;			//스택 선언
+	init_stack(&stack);			//스택 초기화
 	int current_value = 0;		//값 초기화
-
+		
 	for (int i = 0; expr[i] != '\0'; i++) {
 		if (expr[i] == '(') {
 			push(&stack, current_value); // '('일때 스택에 현재값 저장
