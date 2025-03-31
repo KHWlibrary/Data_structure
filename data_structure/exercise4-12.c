@@ -1,75 +1,111 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<ctype.h>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-
-//Â÷ÈÄ¿¡ ½ºÅÃÀÌ ÇÊ¿äÇÏ¸é ¿©±â¸¸ º¹»çÇÏ¿© ºÙÀÎ´Ù.
-//=====½ºÅÃ ÄÚµåÀÇ ½ÃÀÛ=====
+//=====ìŠ¤íƒ ì½”ë“œì˜ ì‹œì‘=====
 #define MAX_STACK_SIZE 100
 typedef char element;
 typedef struct {
-	element data[MAX_STACK_SIZE];
-	int top;
-}StackType;
+    element data[MAX_STACK_SIZE];
+    int top;
+} StackType;
 
-//½ºÅÃ ÃÊ±âÈ­ ÇÔ¼ö
-void init_stack(StackType* s)
-{
-	s->top = -1;
+//ìŠ¤íƒ ì´ˆê¸°í™” í•¨ìˆ˜
+void init_stack(StackType* s) {
+    s->top = -1;
 }
 
-//°ø¹é »óÅÂ °ËÃâ ÇÔ¼ö
-int is_empty(StackType* s)
-{
-	return(s->top == -1);
+//ê³µë°± ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
+int is_empty(StackType* s) {
+    return (s->top == -1);
 }
-//Æ÷È­ »óÅÂ °ËÃâ ÇÔ¼ö
-int is_full(StackType* s)
-{
-	return (s->top == (MAX_STACK_SIZE - 1));
+//í¬í™” ìƒíƒœ ê²€ì¶œ í•¨ìˆ˜
+int is_full(StackType* s) {
+    return (s->top == (MAX_STACK_SIZE - 1));
 }
-//»ğÀÔÇÔ¼ö
-void push(StackType* s, element item)
-{
-	if (is_full(s)) {
-		fprintf(stderr, "½ºÅÃ Æ÷È­ ¿¡·¯\n");
-		return;
-	}
-	else s->data[++(s->top)] = item;
+//ì‚½ì…í•¨ìˆ˜
+void push(StackType* s, element item) {
+    if (is_full(s)) {
+        fprintf(stderr, "ìŠ¤íƒ í¬í™” ì—ëŸ¬\n");
+        return;
+    }
+    else s->data[++(s->top)] = item;
 }
-//»èÁ¦ÇÔ¼ö
-element pop(StackType* s)
-{
-	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅÃ °ø¹é ¿¡·¯\n");
-		exit(1);
-	}
-	else return s->data[(s->top)--];
+//ì‚­ì œí•¨ìˆ˜
+element pop(StackType* s) {
+    if (is_empty(s)) {
+        fprintf(stderr, "ìŠ¤íƒ ê³µë°± ì—ëŸ¬\n");
+        exit(1);
+    }
+    else return s->data[(s->top)--];
 }
-//ÇÇÅ©ÇÔ¼ö
-element peek(StackType* s)
-{
-	if (is_empty(s)) {
-		fprintf(stderr, "½ºÅÃ°ø¹é¿¡·¯\n");
-		exit(1);
-	}
-	else return s->data[s->top];
+//í”¼í¬í•¨ìˆ˜
+element peek(StackType* s) {
+    if (is_empty(s)) {
+        fprintf(stderr, "ìŠ¤íƒê³µë°±ì—ëŸ¬\n");
+        exit(1);
+    }
+    else return s->data[s->top];
 }
-//===== ½ºÅÃ ÄÚµåÀÇ ³¡ =====
+//===== ìŠ¤íƒ ì½”ë“œì˜ ë =====
 
-void run_length(char* expr)
-{
-	StackType stack;
-	init_stack(&stack);
-	char ch;
-	char lower = tolower(ch);		//´ë¹®ÀÚ¸¦ ¼Ò¹®ÀÚ·Î º¯Çü
-	int current_value;
+// ìˆ«ìë¥¼ ë¬¸ìë¡œ ë³€í™˜í•´ì„œ push
+void push_count(StackType* s, int count) {
+    char buffer[10];
+    sprintf(buffer, "%d", count);  // ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜
 
-	for (i = 0; expr[i] != '\0'; i++)
-	{
+    // ë¬¸ì ë¨¼ì € push
+    push(s, buffer[0]);
 
-	}
-	
+    // ìˆ«ì(ìë¦¿ìˆ˜) ë’¤ì— push
+    for (int i = 1; buffer[i] != '\0'; i++) {
+        push(s, buffer[i]);
+    }
+}
 
-	
+void run_length_encoding(const char* str) {
+    StackType stack;
+    init_stack(&stack);
+
+    int len = strlen(str);
+    int i = 0;
+    while (i < len) {
+        char current = str[i];
+        int count = 1;
+
+        while (i + 1 < len && str[i + 1] == current) {
+            count++;
+            i++;
+        }
+
+        // ë¨¼ì € countë¥¼ pushí•˜ê³ , ê·¸ ë‹¤ìŒ ë¬¸ìë¥¼ push
+        push_count(&stack, count);
+        push(&stack, current);
+
+        i++;  //ë‹¤ìŒ ë¬¸ì ë„˜ì–´ê°€ê¸° ìœ„í•œ i++
+    }
+
+    // ì¶œë ¥: ìŠ¤íƒì—ì„œ ì—­ìˆœìœ¼ë¡œ pop
+    printf("Run-Length encoding ê²°ê³¼: ");
+    while (!is_empty(&stack)) {
+        printf("%c", pop(&stack));
+    }
+    printf("\n");
+}
+
+
+// ë©”ì¸ í•¨ìˆ˜
+int main() {
+    char input[100];
+    printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
+    scanf("%s", input);
+
+    for (int i = 0; input[i] != '\0'; i++) {
+        input[i] = tolower(input[i]);  // ëŒ€ë¬¸ìë¥¼ ì†Œë¬¸ìë¡œ ë³€í™˜
+    }
+
+    run_length_encoding(input);
+    return 0;
 }
