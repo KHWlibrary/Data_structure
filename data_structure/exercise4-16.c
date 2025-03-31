@@ -60,15 +60,36 @@ int main(void)
 {
 	char word[100];
 	int length;
-
+	StackType stack;
+		
 	printf("문자열을 입력하세요: ");
 	scanf("%s", word);
 
 	length = strlen(word);
 
-	for (int i = 0; i < length / 2; i++)
-	{
-		if (word[i] != word[length - 1 - i]);
+	init_stack(&stack);		//스택 초기화
+
+	// 문자열을 스택에 push
+	for (int i = 0; i < length; i++) {
+		push(&stack, word[i]);
 	}
+
+	// 회문 체크
+	int is_palindrome = 1;  // 1이면 회문, 0이면 회문 아님)
+	for (int i = 0; i < length; i++) {
+		if (word[i] != pop(&stack)) {
+			is_palindrome = 0;  // 회문이 아니면 0으로 설정
+			break;
+		}
+	}
+
+	// 결과 출력
+	if (is_palindrome) {
+		printf("회문입니다.\n");
+	}
+	else {
+		printf("회문이 아닙니다.\n");
+	}
+
 	return 0;
 }
