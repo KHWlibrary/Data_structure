@@ -72,5 +72,11 @@
     <ClCompile Include="exercise4-16.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program5-1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program5-2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
