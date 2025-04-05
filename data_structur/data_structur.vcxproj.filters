@@ -147,7 +147,10 @@
     <ClCompile Include="test.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="소스.cpp">
+    <ClCompile Include="program5-3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program5-4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,0 +1,4 @@
+﻿  program5-3.c
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\program5-3.c(84,8): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\program5-3.c(82,6): warning C4101: 'element' :참조되지 않은 지역 변수입니다.
+  data_structur.vcxproj -> C:\Users\unive\OneDrive\문서\GitHub\Data_structure\x64\Debug\data_structur.exe
