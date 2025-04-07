@@ -1,86 +1,131 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
+#include<stdio.h> 
+#include<stdlib.h>
 
-#define MAX_SIZE 100
+#pragma warning (disable : 4996)
 
-// 스택 구조체 정의
-typedef struct {
-    char data[MAX_SIZE];  // 문자 스택
-    int count[MAX_SIZE];  // 문자의 개수를 저장하는 배열
-    int top;              // 스택의 상단을 나타내는 변수
-} Stack;
+typedef struct queue
+{
+	int* arr;	//동적 메모리의 주소를 저장하는 포인터
+	int front;	//삭제위치(배열의 첨자)
+	int rear;	//삽입위치(배열의 첨자)
+	int count;	//저장된 원소의 개수
+	int capacity;// 배열의 최대 용량
+}queue;
 
-// 스택 초기화 함수
-void initStack(Stack* stack) {
-    stack->top = -1;  // 스택이 비어있을 때 top은 -1
+void queueInit(queue* pQue, int size);
+void enqueue(queue* pQue, int data);
+int dequeue(queue* pQue);
+void print(const queue* pQue);
+void queueClear(queue* pQue);
+int main()
+{
+	int choice, data;
+
+	queue que;	//구조체 변수
+
+	queueInit(&que, 5);
+
+	while (1)
+	{
+		system("cls");
+		printf("\n\n\t\t***Circular Queue(원형큐)***\n\n");
+		printf("1.enqueue(삽입)   2.dequeue(삭제)   3.print    4.clear   0.terminae\n");
+		printf("choice : ");
+		scanf("%d", &choice);
+		while (getchar() != '\n');
+
+		switch (choice)
+		{
+		case 1:
+			printf("\n\nInteger Input : ");
+			scanf("%d", &data);
+			while (getchar() != '\n');
+			enqueue(&que, data);
+			break;
+		case 2:
+			data = dequeue(&que);		//삭제 후, 삭제된 값을 리턴
+
+			if (data == -999999999)
+				print("\n\n\t\t queue underflow\n");
+			else
+				printf("\n\n\t\t%d dequeue\n", data);
+			break;
+		case 3:
+			print(&que);
+			break;
+		case 4:
+			queueClear(&que);
+			break;
+		case 0:
+			free(que.arr);
+			exit(0);
+		}
+		printf("\n\n\t\t");
+		system("pause");
+	}
+	return 0;
 }
 
-// 스택에 요소를 추가하는 함수
-void push(Stack* stack, char c, int cnt) {
-    if (stack->top < MAX_SIZE - 1) {
-        stack->top++;
-        stack->data[stack->top] = c;
-        stack->count[stack->top] = cnt;
-    }
+void queueInit(queue* pQue, int size)
+{
+	pQue->arr = (int*)malloc(sizeof(int) * size);
+	pQue->front = 0;
+	pQue->rear = 0;
+	pQue->count = 0;
+	pQue->capacity = size;
 }
 
-// 스택에서 요소를 제거하는 함수
-void pop(Stack* stack) {
-    if (stack->top >= 0) {
-        stack->top--;
-    }
+void enqueue(queue* pQue, int data)
+{
+	if (pQue->count == pQue->capacity)		//저장공간 꽉 찬 상태
+	{
+		printf("\n\n\t\tqueue overflow\n");
+		return 0;
+	}
+	pQue->arr[pQue->rear] = data;;		//데이터 저장
+	pQue->rear++;		//저장 위치 변경
+	pQue->count++;		//저장 개수 증가
+	if (pQue->rear == pQue->capacity)	//범위를 벗어난 인덱스
+		pQue->rear = 0;
 }
 
-// 스택의 top 요소를 반환하는 함수
-char peekChar(Stack* stack) {
-    return stack->data[stack->top];
+int dequeue(queue* pQue)
+{
+	int delvalue;
+	if (pQue->count == 0) //underflow
+	{
+		return -999999999;
+	}
+	delvalue = pQue->arr[pQue->front]; //삭제된 값
+	pQue->front++;	//삭제 위치 증가
+	pQue->count--;	//저장 개수 감소
+
+	if (pQue->front == pQue->capacity)
+		pQue->front = 0;
+	return delvalue;	//삭제된 값
 }
 
-// 스택의 top에 있는 개수를 반환하는 함수
-int peekCount(Stack* stack) {
-    return stack->count[stack->top];
+void print(const queue* pQue)
+{
+	int i;
+
+	printf("\n\nQueue display(FIFO) : ");
+	if (pQue->count == 0) {
+		printf("\n\n\t\t큐가 비어 있는 상태 입니다.\n");
+		return;
+	}
+
+	for (i = pQue->front; i < pQue->front + pQue->count; i++)
+	{
+		printf("%d", pQue->arr[i % pQue->capacity]);
+	}
+	puts("");
 }
 
-// 문자열 압축 함수
-void compressString(const char* input) {
-    Stack stack;
-    initStack(&stack);
-
-    int len = strlen(input);
-
-    for (int i = 0; i < len; i++) {
-        if (stack.top == -1 || peekChar(&stack) != input[i]) {
-            push(&stack, input[i], 1);  // 새로운 문자를 스택에 넣음
-        }
-        else {
-            stack.count[stack.top]++;  // 연속된 문자의 개수 증가
-        }
-    }
-
-    // 압축된 문자열 출력
-    for (int i = 0; i <= stack.top; i++) {
-        printf("%d%c", stack.count[i], stack.data[i]);
-    }
-    printf("\n");
-}
-
-int main() {
-    char input[MAX_SIZE];
-
-    // 사용자로부터 문자열 입력 받기
-    printf("문자열을 입력하세요: ");
-    scanf("%s", input);
-
-    for (int i = 0; input[i] != '\0'; i++) {
-        input[i] = tolower(input[i]);  // 대문자를 소문자로 변환
-    }
-
-    // 압축된 문자열 출력
-    printf("압축된 문자열: ");
-    compressString(input);
-
-    return 0;
+void queueClear(queue* pQue)
+{
+	pQue->count = 0;
+	pQue->front = 0;
+	pQue->rear = 0;
 }

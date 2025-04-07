@@ -1,2 +1,4 @@
-﻿  program5-2.c
+﻿  test.c
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\test.c(50,11): warning C4133: '함수': 'char [22]'과(와) 'const queue *' 사이의 형식이 호환되지 않습니다.
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\test.c(84,3): warning C4098: 'enqueue': 'void' 함수에서 값을 반환하고 있습니다.
   data_structur.vcxproj -> C:\Users\unive\OneDrive\문서\GitHub\Data_structure\x64\Debug\data_structur.exe

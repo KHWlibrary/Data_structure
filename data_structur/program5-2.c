@@ -10,7 +10,7 @@ typedef struct {		//큐 타입
 	int front;
 	int rear;
 	element data[MAX_QUEUE_SIZE];
-}QueueType;
+}QueueType;					//큐타입 구조체 큐 상태를 저장하는 구조체 큐에 저장된 데이터 배열에 저장됩니다
 
 //오류함수
 void error(char *message)
