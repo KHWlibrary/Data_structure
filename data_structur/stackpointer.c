@@ -103,4 +103,3 @@ int pop(stack* p)
 	//(p->top)--;
 	return p->arr[(p->top)--];
 }
-?

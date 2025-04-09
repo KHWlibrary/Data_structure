@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise5-11.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\exercise5-11.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-9.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\exercise6-9.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise4-16.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\exercise4-16.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-11.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\exercise6-11.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "exercise4-16.c",
-              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise4-16.c",
-              "RelativeDocumentMoniker": "data_structur\\exercise4-16.c",
-              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise4-16.c",
-              "RelativeToolTip": "data_structur\\exercise4-16.c",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACQAAAACAAAAAAAAAA==",
+              "Title": "exercise6-11.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-11.c",
+              "RelativeDocumentMoniker": "data_structur\\exercise6-11.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-11.c",
+              "RelativeToolTip": "data_structur\\exercise6-11.c",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwGQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-08T10:37:29.009Z",
+              "WhenOpened": "2025-04-09T04:41:31.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "exercise5-11.c",
-              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise5-11.c",
-              "RelativeDocumentMoniker": "data_structur\\exercise5-11.c",
-              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise5-11.c",
-              "RelativeToolTip": "data_structur\\exercise5-11.c",
-              "ViewState": "AgIAACwAAAAAAAAAAAAIwEYAAAABAAAAAAAAAA==",
+              "Title": "exercise6-9.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-9.c",
+              "RelativeDocumentMoniker": "data_structur\\exercise6-9.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\exercise6-9.c",
+              "RelativeToolTip": "data_structur\\exercise6-9.c",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAIwGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-08T10:32:59.053Z",
+              "WhenOpened": "2025-04-09T03:10:05.513Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "test.c",
-              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\test.c",
-              "RelativeDocumentMoniker": "data_structur\\test.c",
-              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\test.c",
-              "RelativeToolTip": "data_structur\\test.c",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAAHkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-07T03:09:01.494Z"
             }
           ]
         }

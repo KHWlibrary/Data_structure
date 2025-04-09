@@ -168,5 +168,14 @@
     <ClCompile Include="exercise5-11.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="exercise6-9.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program6-1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise6-11.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
