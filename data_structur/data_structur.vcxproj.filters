@@ -177,5 +177,11 @@
     <ClCompile Include="exercise6-11.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program6-2~7.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\repos\KHWlibrary\Data_structure\Data_structure\노드 맨 앞 삽입.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

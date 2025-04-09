@@ -1,2 +1,11 @@
-﻿  exercise6-9.c
-  data_structur.vcxproj -> C:\Users\unive\OneDrive\문서\GitHub\Data_structure\x64\Debug\data_structur.exe
+﻿  노드 맨 앞 삽입.c
+C:\Users\tksk8\source\repos\KHWlibrary\Data_structure\Data_structure\노드 맨 앞 삽입.c(56,8): error C2086: 'node *new_node': 재정의
+      C:\Users\tksk8\source\repos\KHWlibrary\Data_structure\Data_structure\노드 맨 앞 삽입.c(55,8):
+      'new_node' 선언을 참조하십시오.
+  
+  program6-2.c
+C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\data_structur\program6-2.c(8,1): error C2143: 구문 오류: ':'이(가) '}' 앞에 없습니다.
+C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\data_structur\program6-2.c(8,1): error C2059: 구문 오류: '}'
+C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\data_structur\program6-2.c(11,10): error C2143: 구문 오류: '{'이(가) '*' 앞에 없습니다.
+C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\data_structur\program6-2.c(12,1): error C1004: 예기치 않은 파일의 끝이 나타났습니다.
+  코드를 생성하고 있습니다...
