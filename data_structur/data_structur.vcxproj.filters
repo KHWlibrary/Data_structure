@@ -183,5 +183,8 @@
     <ClCompile Include="..\..\..\..\..\source\repos\KHWlibrary\Data_structure\Data_structure\노드 맨 앞 삽입.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="lab6단어 저장 연결리스트.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
