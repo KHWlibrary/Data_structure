@@ -186,5 +186,11 @@
     <ClCompile Include="lab6단어 저장 연결리스트.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program6-8.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="lab6 두개의 리스트를 하나로 합치는 함수.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
