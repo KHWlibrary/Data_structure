@@ -195,5 +195,11 @@
     <ClCompile Include="lab6리스트를 역순을 만드는 연산.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="exercise6-14.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise6-16.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
