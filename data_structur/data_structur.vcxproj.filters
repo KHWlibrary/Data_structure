@@ -201,5 +201,8 @@
     <ClCompile Include="exercise6-16.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program7-3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
