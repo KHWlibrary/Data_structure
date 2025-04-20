@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -90,3 +91,15 @@ int main() {
 
 	return 0;
 }
+=======
+//이중연결 리스트 공부
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef int element;	// int대신 element를 int로 사용
+typedef struct Double_ListNode
+{
+	element data;
+	Double_ListNode *
+};
+>>>>>>> Stashed changes

@@ -14,15 +14,23 @@ ListNode* insert_first(ListNode* head, element data) //head는 첫 번째 노드를 가�
 {
 	ListNode* node = (ListNode*) malloc(sizeof(ListNode));	//node에 동적 메모리 할당
 	//head가 비어있으면
-	if (head == NULL)
+	if (node == NULL)
 	{
-		strcpy(node->data, data);  // data 값을 노드에 복사
+		fprintf(stderr, "메모리 할당 오류\n");
+		exit(1);
+	}
+	strcpy_s(node->data, sizeof(node->data), data);  // data 값을 노드에 복사
+	if (head == NULL)
+	{  
 		node->link = node;      // 자기 자신을 가리키도록 설정 (순환 연결 리스트)
 		head = node;            // head에 새 노드를 넣음
 	}
 	else//head 비어있지 않으면 
 	{
-		strcpy(node->data, data);  // data 값을 노드에 복사
+		ListNode* temp = head;
+		while (temp->link != head) {
+			temp = temp->link;
+		}
 		node->link = head;      // 새 노드의 link는 기존 head를 가리킴
 		head = node;            // head를 새 노드로 업데이트
 	}
@@ -46,7 +54,19 @@ int main(void)
 		p = p->link;
 		count++;
 	} while (p != head && count < 3);//p가 head로 돌아올때 까지 그리고3개의 노드를 출력할때까지
+	// 동적 할당된 메모리 해제 (필수)
+	if (head != NULL) {
+		ListNode* current = head->link;
+		ListNode* temp = NULL;
+		while (current != head) {
+			temp = current;
+			current = current->link;
+			free(temp);
+		}
+		free(head);
+		head = NULL;
+	}
+
 	return 0;
 }
 
-//출력값 이상하게 나옴
