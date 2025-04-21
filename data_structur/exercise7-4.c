@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-typedef int element;	//정수형 데이터를 저장하는 노드정의
+typedef int element;	//element를 int형으로 사용할 수 있게함
 typedef struct ListNode	//연결리스트 노드 구조체 정의
 {
 	element data;	//노드에 data값 저장
@@ -22,23 +22,23 @@ void print_list(ListNode* head)
 //리스트 맨 앞에 새 노드를 삽입하는 함수
 ListNode* insert_first(ListNode* head, element data)
 {
-	ListNode* node = (ListNode*)malloc(sizeof(ListNode));
-	if (node == NULL)
+	ListNode* newnode = (ListNode*)malloc(sizeof(ListNode));
+	if (newnode == NULL)
 	{
 		fprintf(stderr,"메모리 할당 실패\n");
 		exit(1);
 	}
-	node->data = data;  //새 노드에 데이터값 저장
+	newnode->data = data;  //새 노드에 데이터값 저장
 
 	if (head == NULL)
 	{	//첫 노드인 경우 자기 자신을 가르킴
-		node->link = node;	//자기 자신을 가리키는 원형리스트
+		newnode->link = newnode;	//자기 자신을 가리키는 원형리스트
 		head = node;	//head가 새 노드를 가리키게함
 	}
 	else
 	{
-		node->link = head->link;		//새 노드가 기존 첫 번째 노드를 가리킴
-		head->link = node;		//기존 노드가 새 노드를 가리킴
+		newnode->link = head->link;		//새 노드가 기존 첫 번째 노드를 가리킴
+		head->link = newnode;		//기존 노드가 새 노드를 가리킴
 	}
 	return head;
 }

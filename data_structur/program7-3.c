@@ -28,36 +28,34 @@ void print_list(ListNode* head) {
 
 // 리스트의 맨 앞에 새 노드를 삽입하는 함수
 ListNode* insert_first(ListNode* head, element data) {
-    ListNode* node = (ListNode*)malloc(sizeof(ListNode)); // 새로운 노드를 동적 할당
-    node->data = data; // 새 노드에 데이터 저장
+    ListNode* newnode = (ListNode*)malloc(sizeof(ListNode)); // 새로운 노드를 동적 할당
+    newnode->data = data; // 새 노드에 데이터 저장
 
     if (head == NULL) { // 리스트가 비어있다면
-        head = node; // head를 새 노드로 설정
-        node->link = head; // 새 노드가 자기 자신을 가리키게 설정
+        head = newnode; // head를 새 노드로 설정
+        newnode->link = head; // 새 노드가 자기 자신을 가리키게 설정
     }
     else {
-        node->link = head->link; // 새 노드가 기존 첫 번째 노드를 가리키도록 설정
-        head->link = node; // 기존 마지막 노드가 새 노드를 가리키도록 설정
+        newnode->link = head->link; // 새 노드가 기존 첫 번째 노드를 가리키도록 설정
+        head->link = newnode; // 기존 마지막 노드가 새 노드를 가리키도록 설정
     }
-
     return head; // 변경된 head 반환
 }
 
 // 리스트의 맨 뒤에 새 노드를 삽입하는 함수
 ListNode* insert_last(ListNode* head, element data) {
-    ListNode* node = (ListNode*)malloc(sizeof(ListNode)); // 새로운 노드를 동적 할당
-    node->data = data; // 새 노드에 데이터 저장
+    ListNode* newnode = (ListNode*)malloc(sizeof(ListNode)); // 새로운 노드를 동적 할당
+    newnode->data = data; // 새 노드에 데이터 저장
 
     if (head == NULL) { // 리스트가 비어있다면
-        head = node; // head를 새 노드로 설정
-        node->link = head; // 새 노드가 자기 자신을 가리키게 설정
+        head = newnode; // head를 새 노드로 설정
+        newnode->link = head; // 새 노드가 자기 자신을 가리키게 설정
     }
     else {
-        node->link = head->link; // 새 노드가 기존 첫 번째 노드를 가리키도록 설정
-        head->link = node; // 기존 마지막 노드가 새 노드를 가리키도록 설정
-        head = node; // head를 새 노드로 변경
+        newnode->link = head->link; // 새 노드가 기존 첫 번째 노드를 가리키도록 설정
+        head->link = newnode; // 기존 마지막 노드가 새 노드를 가리키도록 설정
+        head = newnode; // head를 새 노드로 변경
     }
-
     return head; // 변경된 head 반환
 }
 

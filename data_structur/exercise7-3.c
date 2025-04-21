@@ -23,22 +23,22 @@ void print_list(ListNode* head) {
 
 // 맨 앞에 삽입하는 함수
 ListNode* insert_ListNode(ListNode* head, element data) {   
-    ListNode* node = (ListNode*)malloc(sizeof(ListNode));  // 새 노드 동적 메모리 할당
-    if (node == NULL) {     //메모리 할당 실패시  에러 메시지 출력
+    ListNode* newnode = (ListNode*)malloc(sizeof(ListNode));  // 새 노드 동적 메모리 할당
+    if (newnode == NULL) {     //메모리 할당 실패시  에러 메시지 출력
         fprintf(stderr, "메모리 할당 실패\n");
         exit(1);        //종료
     }
-    node->data = data;  //새 노드에 데이터값 저장
+    newnode->data = data;  //새 노드에 데이터값 저장
 
     if (head == NULL) {
         // 첫 노드인 경우 자기 자신을 가리킴
-        node->link = node;  //자기 자신을 가리키는 원형리스트
-        head = node;        //head가 새 노드를 가리키게함
+        newnode->link = newnode;  //자기 자신을 가리키는 원형리스트
+        head = newnode;        //head가 새 노드를 가리키게함
     }
     else {
         // 새 노드를 head 다음에 삽입
-        node->link = head->link;    //새 노드가 기존 첫 번째 노드를 가리킴
-        head->link = node;          //기존 마지막 노드가 새 노드를 가리킴
+        newnode->link = head->link;    //새 노드가 기존 첫 번째 노드를 가리킴
+        head->link = newnode;          //기존 마지막 노드가 새 노드를 가리킴
     }
     return head;  // 변경된 head 반환
 }
@@ -61,7 +61,7 @@ ListNode* search_ListNode(ListNode* head, element data) {
 void free_list(ListNode* head) {
     if (head == NULL) return;  // 리스트가 비어 있으면 바로 종료
 
-    ListNode* p = head->link;  // 두 번째 노드부터 시작
+    ListNode* p = head->link;  // 두 번째 노드부터 시작 
     ListNode* temp;
 
     while (p != head) {
