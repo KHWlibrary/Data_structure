@@ -36,7 +36,7 @@ void insert_dlist(DoubleListNode* before, element data) {
 // 값 탐색
 DoubleListNode* search(DoubleListNode* head, element found) {
 	DoubleListNode* p = head->next;
-	while (p != head) {  // ✅ 수정됨
+	while (p != head) {  //
 		if (p->data == found)
 			return p;
 		p = p->next;
@@ -58,11 +58,11 @@ void free_list(DoubleListNode* head) {
 }
 
 int main(void) {
-	// ✅ 헤드 노드 메모리 동적 할당 및 초기화
+	//헤드 노드 메모리 동적 할당 및 초기화
 	DoubleListNode* head = (DoubleListNode*)malloc(sizeof(DoubleListNode));
 	init(head);
 
-	// ✅ 항상 head 기준으로 삽입 (head 오른쪽에 삽입됨)
+	// head 기준으로 삽입 (head 오른쪽에 삽입됨)
 	insert_dlist(head, 1);
 	insert_dlist(head, 2);
 	insert_dlist(head, 3);

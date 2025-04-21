@@ -1,86 +1,79 @@
-#include <stdio.h>
-#include <stdlib.h>
+//배열에 들어있는 정수의 수너를 거꾸로 하는 프로그램을 작성해보자. 스택을 사용한다.
+#define _CRT_SECURE_NO_WARNINGS
 
+#include<stdio.h>
+#include<stdlib.h>
+
+//차후에 스택이 필요하면 여기만 복사하여 붙인다.
+//=====스택 코드의 시작=====
+#define MAX_STACK_SIZE 7
 typedef int element;
+typedef struct {
+	element data[MAX_STACK_SIZE];
+	int top;
+}StackType;
 
-// 연결 리스트 노드 정의
-typedef struct ListNode {
-    element data;
-    struct ListNode* link;
-} ListNode;
-
-// 리스트를 출력하는 함수
-void print_list(ListNode* head) {
-    if (head == NULL) return;
-
-    ListNode* p = head;
-    do {
-        printf("%d -> ", p->data);
-        p = p->link;
-    } while (p != head);
-    printf("(head)\n");
+//스택 초기화 함수
+void init_stack(StackType* s)
+{
+	s->top = -1;
 }
 
-// 맨 앞에 삽입하는 함수
-ListNode* insert_ListNode(ListNode* head, element data) {
-    ListNode* node = (ListNode*)malloc(sizeof(ListNode));  // 새 노드 동적 할당
-    if (node == NULL) {
-        fprintf(stderr, "메모리 할당 실패\n");
-        exit(1);
-    }
-    node->data = data;
-
-    if (head == NULL) {
-        // 첫 노드인 경우 자기 자신을 가리킴
-        node->link = node;
-        head = node;
-    }
-    else {
-        // 새 노드를 head 다음에 삽입
-        node->link = head->link;
-        head->link = node;
-    }
-    return head;  // 변경된 head 반환
+//공백 상태 검출 함수
+int is_empty(StackType* s)
+{
+	return(s->top == -1);
 }
-
-// 리스트에서 데이터를 가진 노드를 찾는 함수
-ListNode* search_ListNode(ListNode* head, element data) {
-    if (head == NULL) return NULL;
-
-    ListNode* p = head;
-    do {
-        if (p->data == data)
-            return p;  // 찾은 경우 해당 노드 반환
-        p = p->link;
-    } while (p != head);
-
-    return NULL;  // 못 찾은 경우
+//포화 상태 검출 함수
+int is_full(StackType* s)
+{
+	return (s->top == (MAX_STACK_SIZE - 1));
 }
+//삽입함수
+void push(StackType* s, element item)
+{
+	if (is_full(s)) {
+		fprintf(stderr, "스택 포화 에러\n");
+		return;
+	}
+	else s->data[++(s->top)] = item;
+}
+//삭제함수
+element pop(StackType* s)
+{
+	if (is_empty(s)) {
+		fprintf(stderr, "스택 공백 에러\n");
+		exit(1);
+	}
+	else return s->data[(s->top)--];
+}
+//피크함수
+element peek(StackType* s)
+{
+	if (is_empty(s)) {
+		fprintf(stderr, "스택 공백 에러\n");
+		exit(1);
+	}
+	else return s->data[s->top];
+}
+//===== 스택 코드의 끝 =====
 
-// 메인 함수
-int main(void) {
-    ListNode* head = NULL;
+int main(void)
+{
+	StackType s;
 
-    // 노드 삽입 (맨 앞에 삽입)
-    head = insert_ListNode(head, 1);
-    head = insert_ListNode(head, 2);
-    head = insert_ListNode(head, 3);
-    head = insert_ListNode(head, 4);
-    head = insert_ListNode(head, 5);
+	init_stack(&s);
+	int num;
+	printf("정수 배열의 크기: %d\n", MAX_STACK_SIZE - 1);		//최대 6자리 입력가능
+	printf("정수를 입력하시오: ");
+	scanf("%d", &num);
 
-    // 리스트 출력
-    printf("원형 연결 리스트 출력:\n");
-    print_list(head);
+	printf("%d \n", pop(&s)); 
+	printf("%d \n", pop(&s));  
+	printf("%d \n", pop(&s));
+	printf("%d \n", pop(&s));
+	printf("%d \n", pop(&s));
+	printf("%d \n", pop(&s));
 
-    // search 테스트
-    element key = 3;
-    ListNode* found = search_ListNode(head, key);
-    if (found != NULL) {
-        printf("노드 %d를 찾았습니다:", key);
-    }
-    else {
-        printf("노드 %d는 리스트에 없습니다.\n", key);
-    }
-
-    return 0;
+	return 0;
 }
