@@ -1,105 +1,86 @@
-<<<<<<< Updated upstream
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_TERMS 101
-typedef struct {
-	float coef;
-	int expon;
-} polynomial;
-polynomial terms[MAX_TERMS] = { { 8, 3 }, { 7, 1 }, { 1, 0 }, { 10, 3 }, { 3, 2 }, { 1, 0 } };
-int avail = 6;
 
-//두개의 정수를 비교
-char compare(int a, int b)
-{
-	if (a > b) return '>';
-	else if (a == b) return '=';
-	else return '<';
+typedef int element;
+
+// 연결 리스트 노드 정의
+typedef struct ListNode {
+    element data;
+    struct ListNode* link;
+} ListNode;
+
+// 리스트를 출력하는 함수
+void print_list(ListNode* head) {
+    if (head == NULL) return;
+
+    ListNode* p = head;
+    do {
+        printf("%d -> ", p->data);
+        p = p->link;
+    } while (p != head);
+    printf("(head)\n");
 }
 
-//새로운 항을 다항식에 추가한다.
-void attach(float coefficient, int exponent)
-{
-	if (avail >= MAX_TERMS) { // 배열 경계 검사 수정
-		fprintf(stderr, "항의 개수가 너무 많음\n");
-		exit(1);
-	}
-	terms[avail].coef = coefficient;
-	terms[avail++].expon = exponent;
+// 맨 앞에 삽입하는 함수
+ListNode* insert_ListNode(ListNode* head, element data) {
+    ListNode* node = (ListNode*)malloc(sizeof(ListNode));  // 새 노드 동적 할당
+    if (node == NULL) {
+        fprintf(stderr, "메모리 할당 실패\n");
+        exit(1);
+    }
+    node->data = data;
+
+    if (head == NULL) {
+        // 첫 노드인 경우 자기 자신을 가리킴
+        node->link = node;
+        head = node;
+    }
+    else {
+        // 새 노드를 head 다음에 삽입
+        node->link = head->link;
+        head->link = node;
+    }
+    return head;  // 변경된 head 반환
 }
 
-//C = A + B
-void poly_add(int As, int Ae, int Bs, int Be, int* Cs, int* Ce)
-{
-	float tempcoef;
-	*Cs = avail;
-	while (As <= Ae && Bs <= Be)
-		switch (compare(terms[As].expon, terms[Bs].expon))
-		{
-		case '>': //A차수 > B차수
-			attach(terms[As].coef, terms[As].expon);
-			As++;
-			break;
-		case '=':	//A차수 == B차수
-			tempcoef = terms[As].coef + terms[Bs].coef;
-			if (tempcoef)
-				attach(tempcoef, terms[As].expon);
-			As++; Bs++;
-			break;
-		case '<':	//A차수 < B차수
-			attach(terms[Bs].coef, terms[Bs].expon);
-			Bs++;
-			break;
-		}
-	// A의 나머지 항들을 이동함
-	for (; As <= Ae; As++)
-		attach(terms[As].coef, terms[As].expon);
-	//B의 나머지 항들을 이동함
-	for (; Bs <= Be; Bs++)
-		attach(terms[Bs].coef, terms[Bs].expon);
-	*Ce = avail - 1;
+// 리스트에서 데이터를 가진 노드를 찾는 함수
+ListNode* search_ListNode(ListNode* head, element data) {
+    if (head == NULL) return NULL;
+
+    ListNode* p = head;
+    do {
+        if (p->data == data)
+            return p;  // 찾은 경우 해당 노드 반환
+        p = p->link;
+    } while (p != head);
+
+    return NULL;  // 못 찾은 경우
 }
 
-int main() {
-	int As = 0, Ae = 2; // 다항식 A의 시작과 끝 인덱스
-	int Bs = 3, Be = 5; // 다항식 B의 시작과 끝 인덱스
-	int Cs, Ce;         // 다항식 C의 시작과 끝 인덱스
+// 메인 함수
+int main(void) {
+    ListNode* head = NULL;
 
-	poly_add(As, Ae, Bs, Be, &Cs, &Ce);
+    // 노드 삽입 (맨 앞에 삽입)
+    head = insert_ListNode(head, 1);
+    head = insert_ListNode(head, 2);
+    head = insert_ListNode(head, 3);
+    head = insert_ListNode(head, 4);
+    head = insert_ListNode(head, 5);
 
-	printf("다항식 A: ");
-	for (int i = As; i <= Ae; i++) {
-		printf("%.1fx^%d ", terms[i].coef, terms[i].expon);
-		if (i < Ae) printf("+ ");
-	}
-	printf("\n");
+    // 리스트 출력
+    printf("원형 연결 리스트 출력:\n");
+    print_list(head);
 
-	printf("다항식 B: ");
-	for (int i = Bs; i <= Be; i++) {
-		printf("%.1fx^%d ", terms[i].coef, terms[i].expon);
-		if (i < Be) printf("+ ");
-	}
-	printf("\n");
+    // search 테스트
+    element key = 3;
+    ListNode* found = search_ListNode(head, key);
+    if (found != NULL) {
+        printf("노드 %d를 찾았습니다:", key);
+    }
+    else {
+        printf("노드 %d는 리스트에 없습니다.\n", key);
+    }
 
-	printf("다항식 C = A + B: ");
-	for (int i = Cs; i <= Ce; i++) {
-		printf("%.1fx^%d ", terms[i].coef, terms[i].expon);
-		if (i < Ce) printf("+ ");
-	}
-	printf("\n");
-
-	return 0;
+    return 0;
 }
-=======
-//이중연결 리스트 공부
-#include<stdio.h>
-#include<stdlib.h>
-
-typedef int element;	// int대신 element를 int로 사용
-typedef struct Double_ListNode
-{
-	element data;
-	Double_ListNode *
-};
->>>>>>> Stashed changes
