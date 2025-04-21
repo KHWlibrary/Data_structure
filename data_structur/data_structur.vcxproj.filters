@@ -225,5 +225,8 @@
     <ClCompile Include="exercise7-6.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="exercise7-7.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
