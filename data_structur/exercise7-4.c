@@ -1,10 +1,11 @@
+//저장된 데이터 개수를 반환하는 get_size를 작성하고 테스트 하는 프로그램
 #include<stdio.h>
 #include<stdlib.h>
 
 typedef int element;	//element를 int형으로 사용할 수 있게함
 typedef struct ListNode	//연결리스트 노드 구조체 정의
 {
-	element data;	//노드에 data값 저장
+	element data;	//노드에 저장 할 data값 
 	struct ListNode* link;	//다음 노드를 가리키는 포인터
 }ListNode;	//구조체 이름
 
@@ -33,7 +34,7 @@ ListNode* insert_first(ListNode* head, element data)
 	if (head == NULL)
 	{	//첫 노드인 경우 자기 자신을 가르킴
 		newnode->link = newnode;	//자기 자신을 가리키는 원형리스트
-		head = node;	//head가 새 노드를 가리키게함
+		head = newnode;	//head가 새 노드를 가리키게함
 	}
 	else
 	{
@@ -48,6 +49,8 @@ int get_size(ListNode* head) {
 	if (head == NULL) return 0;	//리스트가 비어있다면 0반환
 	int count = 0;
 	ListNode* p = head;
+	//먼저 count1개가 올라가고
+	//p가 head같지않으면 count 갯수가 1개씩 올라감
 	do {
 		count++;		//1번 순회 할때마다 count 1씩 증가 
 		p = p->link;	//다음노드로 이동
@@ -60,7 +63,7 @@ void free_list(ListNode* head) {
 	if (head == NULL) return;  // 리스트가 비어 있으면 바로 종료
 
 	ListNode* p = head->link;  // 두 번째 노드부터 시작
-	ListNode* temp;
+	ListNode* temp;			//임시 노드
 
 	while (p != head) {
 		temp = p;          // 현재 노드를 임시로 저장

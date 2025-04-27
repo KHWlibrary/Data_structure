@@ -1,10 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
+//이중 연결 리스트를 역순으로 순회하면서 저장된 데이터 값을 출력하는 프로그램
+#include <stdio.h>  //printf함수에 쓰임
+#include <stdlib.h> //malloc, free, exit함수에 쓰임
 
 typedef int element;	//element를 int형으로 사용할 수 있게함
 typedef struct ListNode	//연결리스트 노드 구조체 정의
 {
-	element data;	//data 값 저장
+	element data;	//노드에 저장할 data 값 
 	struct ListNode* link;	//다음 노드를 가리키는 포인터
 }ListNode;	//구조체 이름
 
@@ -13,8 +14,10 @@ void print_list(ListNode* head)
 {
 	if (head == NULL) return;	//리스트가 비어있다면 출력하지 않고 종료
 	ListNode* p = head;		//현재 노드를 가리키는 포인터, head부터 시작
+	//데이터 출력,다음노드 이동은 무조건 1번은 실행됨
+	//다음으로 p가 head아니면 실행 head이면 반복문을 빠져나옴
 	do {
-		printf("%d", p->data);	//현재 노드 데이터 출력
+		printf(" %d ", p->data);	//현재 노드 데이터 출력
 		p = p->link;	//다음 노드로 이동
 	} while (p != head);	//한 바퀴 볼때까지 반복
 }
@@ -64,17 +67,17 @@ void free_list(ListNode* head) {
 //메인함수
 int main(void)
 {
-	ListNode* head = NULL;
+	ListNode* head = NULL;		//head리스트 초기화
 
 	int count, data;	//count, data 정수형으로 표현
-	int i;
+	int i;	//for문에 사용될 변수
 	
 	printf("데이터 개수를 입력하세요: ");
-	scanf_s("%d", &count);
+	scanf_s("%d", &count);		//데이터 개수 입력
 
 	for (i = 1; i < count+1; i++) {
 		printf("노드#%d의 데이터를 입력하세요: ", i);
-		scanf_s("%d", &data);
+		scanf_s("%d", &data);	//데이터 입력
 		head = insert_first(head, data);
 	}
 	printf("데이터 역순으로 출력: ");
