@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\..\..\..\source\repos\KHWlibrary\Data_structure\Data_structure\노드 맨 앞 삽입.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="BST.c" />
     <ClCompile Include="exercise2-10.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
