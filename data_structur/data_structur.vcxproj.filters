@@ -234,5 +234,20 @@
     <ClCompile Include="BST.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program8-12.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-1,2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-4.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-5오.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
