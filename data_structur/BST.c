@@ -54,7 +54,7 @@ int main()
 			break;
 		case 3:
 			printf("\n\n검색할 정수 입력 : ");
-			scanf("%d", data);
+			scanf("%d", &data);
 
 			findNode = searchNode(root, data);
 
@@ -145,7 +145,7 @@ treeNode* getMinNode(treeNode* t)
 
 	if (t->left != NULL)
 	{
-		return getMaxNode(t->right);
+		return getMaxNode(t->left);
 	}
 	return t; //최솟값 노드를 리턴
 }
@@ -157,7 +157,7 @@ treeNode* removeNode(treeNode* t, int target)
 	if (t->value == target)
 	{	
 		//노드를 삭제하는 코드
-		if (t->left == NULL && t->right == NULL);	//case1. 자식 노드가 없는 경우
+		if (t->left == NULL && t->right == NULL)	//case1. 자식 노드가 없는 경우
 		{
 			free(t);//노드 제거
 			return NULL;
@@ -177,6 +177,8 @@ treeNode* removeNode(treeNode* t, int target)
 		else
 		{
 			temp = getMaxNode(t->left);//오른쪽 자식 노드 중 최댓값을 찾아
+			t->value = temp->value;	//왼쪽 자식 중 최댓값을 삭제 ㄴ드로 대입
+			t->left = removeNode(t->left, temp->value); //다시 제거하러 출발!!!
 		}
 	}
 	else if (t->value > target)
