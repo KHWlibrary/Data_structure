@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\program8-7.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-6.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\program8-6.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-5\uC624.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\program8-5\uC624.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-12.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\program8-12.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\BST.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C7F9718F-F193-441F-8608-612DE6B7B431}|data_structur\\data_structur.vcxproj|solutionrelative:data_structur\\BST.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -23,12 +39,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "program8-7.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-7.c",
+              "RelativeDocumentMoniker": "data_structur\\program8-7.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-7.c*",
+              "RelativeToolTip": "data_structur\\program8-7.c*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-02T12:41:37.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "program8-6.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-6.c",
+              "RelativeDocumentMoniker": "data_structur\\program8-6.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-6.c",
+              "RelativeToolTip": "data_structur\\program8-6.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-02T12:13:26.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "program8-5\uC624.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-5\uC624.c",
+              "RelativeDocumentMoniker": "data_structur\\program8-5\uC624.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-5\uC624.c",
+              "RelativeToolTip": "data_structur\\program8-5\uC624.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-02T12:13:03.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "program8-12.c",
+              "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-12.c",
+              "RelativeDocumentMoniker": "data_structur\\program8-12.c",
+              "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\program8-12.c",
+              "RelativeToolTip": "data_structur\\program8-12.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-05-02T12:13:02.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BST.c",
               "DocumentMoniker": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\BST.c",
               "RelativeDocumentMoniker": "data_structur\\BST.c",
               "ToolTip": "C:\\Users\\unive\\OneDrive\\\uBB38\uC11C\\GitHub\\Data_structure\\data_structur\\BST.c",
               "RelativeToolTip": "data_structur\\BST.c",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAswKUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-05-02T05:20:05.285Z",
               "EditorCaption": ""

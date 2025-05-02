@@ -249,5 +249,14 @@
     <ClCompile Include="program8-5오.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="program8-6.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-7.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program8-8.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
