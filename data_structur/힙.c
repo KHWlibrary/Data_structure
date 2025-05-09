@@ -20,7 +20,8 @@ void shiftup(int* arr, int childindex)
 	int temp;
 	int parentindex = (childindex - 1) / 2;
 
-	if (parentindex >= 0 && arr[parentindex] < arr[childindex])
+	//부모인덱스가 0보다크거나 같고, 자식인덱스가 부모보다 클때 자리 바꿈
+	if (parentindex >= 0 && arr[parentindex] < arr[childindex])	
 	{
 		temp = arr[parentindex];
 		arr[parentindex] = arr[childindex];
