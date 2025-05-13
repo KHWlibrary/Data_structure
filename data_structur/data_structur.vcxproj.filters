@@ -288,5 +288,8 @@
     <ClCompile Include="exercise9-11.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="힙화.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
