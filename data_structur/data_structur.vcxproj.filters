@@ -300,5 +300,14 @@
     <ClCompile Include="exercise10-14.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="programing11-8.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="11장 Quiz.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program11-9.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
