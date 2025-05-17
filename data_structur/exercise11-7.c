@@ -105,16 +105,15 @@ int main(void) {
     for (int i = 0; i < g.n; i++)
         g.adj[i] = NULL;
 
-    // 양방향 간선 삽입 (무방향 그래프라고 가정)
-    insert_edge(&g, 0, 1, 7); insert_edge(&g, 0, 4, 3); insert_edge(&g, 0, 5, 10);
-    insert_edge(&g, 1, 0, 7); insert_edge(&g, 1, 2, 4); insert_edge(&g, 1, 3, 10); insert_edge(&g, 1, 4, 2); insert_edge(&g, 1, 5, 6);
-    insert_edge(&g, 2, 1, 4); insert_edge(&g, 2, 3, 2);
-    insert_edge(&g, 3, 1, 10); insert_edge(&g, 3, 2, 2); insert_edge(&g, 3, 4, 11); insert_edge(&g, 3, 5, 9); insert_edge(&g, 3, 6, 4);
-    insert_edge(&g, 4, 0, 3); insert_edge(&g, 4, 1, 2); insert_edge(&g, 4, 3, 11); insert_edge(&g, 4, 6, 5);
-    insert_edge(&g, 5, 0, 10); insert_edge(&g, 5, 1, 6); insert_edge(&g, 5, 3, 9);
-    insert_edge(&g, 6, 3, 4); insert_edge(&g, 6, 4, 5);
+    insert_edge(&g, 0, 1, 50); insert_edge(&g, 0, 2, 45); insert_edge(&g, 0, 3, 10);
+    insert_edge(&g, 1, 3, 15); insert_edge(&g, 1, 2, 10);
+    insert_edge(&g, 2, 4, 30); 
+    insert_edge(&g, 3, 0, 20); insert_edge(&g, 3, 4, 15); 
+    insert_edge(&g, 4, 1, 20); insert_edge(&g, 4, 2, 35); 
+    insert_edge(&g, 5, 4, 3); 
 
     shortest_path(&g, 0); // 정점 0에서 시작하는 최단 경로 계산
 
     return 0; // 프로그램 종료
 }
+    
