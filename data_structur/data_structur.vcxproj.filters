@@ -309,5 +309,14 @@
     <ClCompile Include="program11-9.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="exercise11-5.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="program 11-10.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise11-7.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
