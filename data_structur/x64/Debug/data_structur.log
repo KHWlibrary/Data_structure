@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-﻿  test.c
+﻿  exercise12-19.c
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\exercise12-19.c(54,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'void (__cdecl *)(int *,int,int)'입니다.
+C:\Users\unive\OneDrive\문서\GitHub\Data_structure\data_structur\exercise12-19.c(54,9): warning C4313: 'printf': 서식 문자열의 '%d'이(가) void (__cdecl *)(int *,int,int)' 형식의 인수 1과(와) 충돌합니다.
   data_structur.vcxproj -> C:\Users\unive\OneDrive\문서\GitHub\Data_structure\x64\Debug\data_structur.exe
-=======
-﻿  exercise9-11.c
-  data_structur.vcxproj -> C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\x64\Debug\data_structur.exe
->>>>>>> Stashed changes
-=======
-﻿  exercise9-11.c
-  data_structur.vcxproj -> C:\Users\tksk8\OneDrive\文件\GitHub\Data_structure\x64\Debug\data_structur.exe
->>>>>>> Stashed changes

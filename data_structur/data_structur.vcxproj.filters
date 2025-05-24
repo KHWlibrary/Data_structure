@@ -318,7 +318,10 @@
     <ClCompile Include="exercise11-7.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="기말 프로젝트.c">
+    <ClCompile Include="program12-11.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise12-19.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
