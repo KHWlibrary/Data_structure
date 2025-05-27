@@ -37,6 +37,7 @@ void merge_sort(int list[], int left, int right)
 		merge_sort(list, left, mid);	//부분 리스트 정렬
 		merge_sort(list, mid + 1, right);	//부분 리스트 정렬
 		merge(list, left, mid, right);	//합병
+		printf("호출된 merge sort: (%d, %d)\n", left, right);
 	}
 }
 
@@ -51,7 +52,7 @@ int main(void)
 	printf("\n");
 
 	merge_sort(list, 0, MAX_SIZE - 1);
-	printf("호출된 merge sort: %d\n", merge_sort);
+
 
 	//정렬된 결과를 원래 배열에 복사
 	for (i = 0; i < MAX_SIZE; i++)
