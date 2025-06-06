@@ -15,7 +15,7 @@ int get_height(TreeNode* node);
 int isBalanced(TreeNode* node);
 
 //			15
-//		4		26
+//		4		20
 //	   1	  16  25
 TreeNode n1 = { 1,NULL,NULL };
 TreeNode n2 = { 4,&n1,NULL };
