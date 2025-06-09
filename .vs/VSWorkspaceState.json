@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\data_structur"
+    "\\data_structur",
+    "\\data_structur\\x64",
+    "\\data_structur\\x64\\Debug"
   ],
-  "SelectedNode": "\\data_structur\\exercise8-18.c",
+  "SelectedNode": "\\data_structur.sln",
   "PreviewInSolutionExplorer": false
 }
